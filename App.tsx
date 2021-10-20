@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
   useFonts,
@@ -6,6 +5,7 @@ import {
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'expo-status-bar';
 
 import { Home } from './src/screens/Home';
 
@@ -20,7 +20,10 @@ export default function App() {
   }
 
   return (
-    <Home />
+    <>
+      <StatusBar style="light" />
+      <Home />
+    </>
   );
 }
 
