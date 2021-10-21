@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   Text,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -14,7 +15,11 @@ export function Header() {
     <View style={styles.container}>
       <LogoSvg />
 
-      <Text>Sair</Text>
+      <TouchableOpacity>
+        <Text style={styles.logoutText}>
+          Sair
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
