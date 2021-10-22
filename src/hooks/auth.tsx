@@ -54,7 +54,6 @@ function AuthProvider({ children }: AuthProviderProps) {
       if (authSessionResponse.type === 'success' && authSessionResponse.params.error !== 'access_denied') {
         const authResponse = await api.post('/authenticate', { code: authSessionResponse.params.code });
         const { user, token } = authResponse.data as AuthResponse
-        console.log(authResponse.data)
 
         api.defaults.headers.common.authorization = `Bearer ${token}`;
         await AsyncStorage.setItem(USER_STORAGE, JSON.stringify(user));
